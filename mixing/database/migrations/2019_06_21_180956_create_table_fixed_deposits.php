@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInvestmentTable extends Migration
+class CreateTableFixedDeposits extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateInvestmentTable extends Migration
      */
     public function up()
     {
-        Schema::create('investment', function (Blueprint $table) {
+        Schema::create('fixed_deposits', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->integer('institute_id');
             $table->integer('tenor');
-            $table->decimal('amount',15,2);
-            $table->decimal('rate',4,2);
-            $table->decimal('invest_at');
+            $table->decimal('amount', 15, 2);
+            $table->decimal('rate', 4, 2);
+            $table->date('invest_at');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateInvestmentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('investment');
+        Schema::dropIfExists('table_fixed_deposits');
     }
 }

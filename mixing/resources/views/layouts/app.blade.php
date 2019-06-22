@@ -21,11 +21,20 @@
       <i class="fa fa-home"></i>
       <span>Home</span><br><br>
 
-      <a href="{{ route('investment') }}">
+      <a href="{{ route('fixed-deposit') }}">
       <i class="fa fa-home"></i>
       <span>Fixed Deposit</span>
     
     </a>
+
+    <a href="{{ route('investment') }}">
+      <i class="fa fa-university"></i>
+      <span>Investment</span>
+    </a>
+  
   </li>
+
+  
+   
 </ul>
 @endsection

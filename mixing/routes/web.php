@@ -17,12 +17,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+// Route::get('/investment', 'Investment@index')->name('investment');
+
+//Route::get('/add-investment', 'Investment@create')->name('add_investment');
+
+
+Route::get('/fixed-deposit', 'FixedDepositController@index')->name('fixed-deposit');
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/investment', 'Investment@index')->name('investment');
-
-Route::get('/add-investment', 'Investment@create')->name('add_investment');
-
-
-//Route::get('/fixed-deposit', 'FixedDeposit@index')->name('fixed-deposit');
+Route::get('/fixed-deposit', 'FixedDepositController@index')->name('fixed-deposit');
+Route::get('/add-fixed-deposit', 'FixedDepositController@create')->name('add-fixed-deposit');
+Route::post('/save-fixed-deposit', 'FixedDepositController@store')->name('saveFixedDeposit');
+Route::get('/show-fixed-deposit/{id}', 'FixedDepositController@show')->name('showFixedDeposit');
+Route::get('/edit-fixed-deposit/{id}', 'FixedDepositController@edit')->name('editFixedDeposit');
+Route::post('/update-fixed-deposit', 'FixedDepositController@update')->name('updateFixedDeposit');
+Route::post('/delete-fixed-deposit', 'FixedDepositController@delete')->name('deleteFixedDeposit');
+Route::get('/investment', 'InvestmentController@index')->name('investment');
+Route::get('/add-investment', 'InvestmentController@create')->name('add-investment');
+Route::post('/save-investment', 'InvestmentController@store')->name('saveInvestment');
 
